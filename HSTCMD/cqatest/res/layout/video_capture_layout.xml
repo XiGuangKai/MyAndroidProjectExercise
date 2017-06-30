@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">>
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/videocapturebutton_capture" android:text="@string/videocapture_capture" android:textSize="18sp"  ></Button>
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/videocapturebutton_nouse" android:text="@string/mmc_text" android:visibility="invisible"></Button>
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/videocapturebutton_playback" android:text="@string/videocapture_playback"  android:textSize="18sp" ></Button>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/videocapturetextview_nouse" android:text="@string/mmc_text" android:layout_weight="2"> </TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/videocapturetextview_time" android:text="@string/mmc_text"  android:textSize="30sp" android:textStyle ="bold" android:textColor ="#7FFFD4"> </TextView>    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="848dp" android:layout_height="478dp">
+        <SurfaceView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/videocapture_surfaceview"
+            android:layout_width="848dp" android:visibility="visible" android:layout_height="478dp">
+        </SurfaceView>
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="@string/pref_title_status"
+        android:title="@string/pref_title_status"
+        android:summary="@string/pref_value_none" />
+
+    <ListPreference
+        android:key="@string/pref_title_display_output"
+        android:title="@string/pref_title_display_output"
+        android:summary=""
+        android:defaultValue="1"
+        android:entries="@array/display_output_text"
+        android:entryValues="@array/display_output_values" />
+
+    <SwitchPreference
+        android:key="@string/pref_title_display_turn_on_off"
+        android:title="@string/pref_title_display_turn_on_off"
+        android:summary="" />
+
+    <Preference
+        android:key="@string/pref_title_show_test_pattern"
+        android:title="@string/pref_title_show_test_pattern"
+        android:summary="" />
+
+</PreferenceScreen>

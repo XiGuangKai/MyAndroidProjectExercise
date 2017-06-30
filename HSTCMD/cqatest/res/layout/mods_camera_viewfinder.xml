@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:gravity="center"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+        <SurfaceView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mods_camera_surfaceview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible" >
+        </SurfaceView>
+
+</LinearLayout>

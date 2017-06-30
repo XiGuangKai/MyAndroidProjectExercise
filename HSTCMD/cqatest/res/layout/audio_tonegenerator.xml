@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/toneLengthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tcmd_audio_tone_length"
+                    android:minHeight="60dip"
+                    android:maxHeight="60dip"
+                    android:minWidth="80dip"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5px"
+                    />
+
+                <EditText
+                    android:id="@+id/toneLengthTextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:minWidth="80dip"
+                    android:maxLines="1"
+                    android:numeric="integer"
+                    android:gravity="right|center_vertical"
+                    android:inputType="numberDecimal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:text="@string/tcmd_audio_tone_length_eg"
+                    android:gravity="right|center_vertical"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                   <TextView
+                    android:id="@+id/sampleRateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tcmd_audio_tone_sample"
+                    android:minHeight="60dip"
+                    android:maxHeight="60dip"
+                    android:minWidth="80dip"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5px"
+                    />
+
+                   <EditText
+                    android:id="@+id/sampleRateTextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:minWidth="80dip"
+                    android:maxLines="1"
+                    android:numeric="integer"
+                    android:gravity="right|center_vertical"
+                    android:inputType="numberDecimal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:text="@string/tcmd_audio_tone_sample_eg"
+                    android:gravity="right|center_vertical"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                   <TextView
+                       android:id="@+id/startFreqText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tcmd_audio_tone_start_freq"
+                    android:minHeight="60dip"
+                    android:maxHeight="60dip"
+                    android:minWidth="80dip"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5px"
+                    />
+
+                <EditText
+                    android:id="@+id/startFreqTextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:minWidth="80dip"
+                    android:maxLines="1"
+                    android:numeric="integer"
+                    android:gravity="right|center_vertical"
+                    android:inputType="numberDecimal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:text="@string/tcmd_audio_tone_start_freq_eg"
+                    android:gravity="right|center_vertical"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                       android:id="@+id/stopFreqText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tcmd_audio_tone_end_freq"
+                    android:minHeight="60dip"
+                    android:maxHeight="60dip"
+                    android:minWidth="80dip"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5px"
+                />
+
+                <EditText
+                    android:id="@+id/stopFreqTextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:minWidth="80dip"
+                    android:maxLines="1"
+                    android:numeric="integer"
+                    android:gravity="right|center_vertical"
+                    android:inputType="numberDecimal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:text="@string/tcmd_audio_tone_end_freq_eg"
+                    android:gravity="right|center_vertical"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/volumeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tcmd_audio_tone_volume"
+                    android:minHeight="60dip"
+                    android:maxHeight="60dip"
+                    android:minWidth="80dip"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5px"
+                />
+
+                <EditText
+                    android:id="@+id/volumeTextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:minWidth="80dip"
+                    android:maxLines="1"
+                    android:numeric="integer"
+                    android:gravity="right|center_vertical"
+                    android:inputType="numberDecimal"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:text="@string/tcmd_audio_tone_volume_eg"
+                    android:gravity="right|center_vertical"
+                />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <CheckBox
+                android:id="@+id/linearOrLogCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tcmd_audio_tone_linear"/>
+
+            <CheckBox
+                android:id="@+id/loopCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tcmd_audio_tone_loop"/>
+
+            <CheckBox
+                android:id="@+id/loudspeakerEarpieceCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tcmd_audio_tone_loudspeaker"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/play_audio_tone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/audio_tone_button" />
+
+    </LinearLayout>
+
+</LinearLayout>

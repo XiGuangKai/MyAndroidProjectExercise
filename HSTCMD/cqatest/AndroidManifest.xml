@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest android:versionCode="191" android:versionName="5.0.7"
+    package="com.motorola.motocit" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk android:minSdkVersion="11"
+              android:targetSdkVersion="23"/>
+    <permission android:name="com.motorola.android.permission.TCMD_LOCAL"
+        android:protectionLevel="signatureOrSystem"
+        android:label="@string/permlab_tcmdLocal"
+        android:description="@string/permdesc_tcmdLocal" />
+
+    <permission android:name="com.motorola.permission.QCOM_DIAG"
+                android:protectionLevel="signatureOrSystem" />
+
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+
+    <uses-permission android:name="com.motorola.permission.QCOM_DIAG"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="com.motorola.permission.ACCESS_WIFI_AUTONOMOUS" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="com.motorola.permission.READ_CID_BLOCK" />
+    <uses-permission android:name="com.motorola.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="com.motorola.permission.TELEPHONY_RAW"/>
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS" />
+    <uses-permission android:name="android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY" />
+    <uses-permission android:name="com.motorola.android.permission.TCMD_LOCAL" />
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Permissions for ALT test -->
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.SHUTDOWN" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.FACTORY_TEST" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_EXTENSION_SERVICE" />
+
+    <uses-permission android:name="com.motorola.mod.permission.MOD_ACCESS_INFO" />
+    <uses-permission android:name="com.motorola.mod.permission.RAW_PROTOCOL" />
+    <uses-permission android:name="com.motorola.mod.permission.MOD_INTERNAL" />
+
+    <uses-permission android:name="android.permission.OVERRIDE_WIFI_CONFIG" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <!-- start CQATest Secret Keycode Changes -->
+        <receiver android:name="CQATestReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="2486" android:scheme="android_secret_code"/>
+            </intent-filter>
+        </receiver>
+        <!-- end CQATest Secret Keycode Changes -->
+        <!-- Test Result activity-->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/test_result"
+            android:exported="false"
+            android:name="com.motorola.motocit.Test_Result" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- End Test Result activity-->
+        <receiver android:name="CQATestBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/app_name"
+            android:exported="false"
+            android:name="Test_MenuMode" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_2"/>
+                <category android:name="com.motorola.motocit.Test_MenuMode.MENU_ITEM_2"/>
+            </intent-filter>
+        </activity>
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/app_name"
+            android:exported="false"
+            android:name="Test_SequenceMode" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_1"/>
+                <category android:name="com.motorola.motocit.Test_SequenceMode.MENU_ITEM_1"/>
+            </intent-filter>
+        </activity>
+         <activity android:allowTaskReparenting="true"
+            android:label="@string/app_name"
+            android:exported="false"
+            android:name="Test_ModelAssemblyMode" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_3"/>
+                <category android:name="com.motorola.motocit.Test_ModelAssemblyMode.MENU_ITEM_3"/>
+            </intent-filter>
+        </activity>
+        <activity android:allowTaskReparenting="true"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:name="Test_Main" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:allowTaskReparenting="true"
+            android:enabled="false" android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:name=".AppMainActivity" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+                <!-- com.motorola.test.CommServer
+                This service runs in the background monitoring for communication between the PC & Phone.
+                The CommServer is specifically monitoring port 38300 (as used by many examples on the web)
+                for messages forwarded to this phone -->
+        <service android:name=".CommServer"
+            android:exported="false">
+        </service>
+        <service android:name=".LocalCommServer">
+                <intent-filter>
+                        <action android:name="com.motorola.motocit.LocalCommServer"/>
+                </intent-filter>
+        </service>
+        <!--  not used currently -->
+        <activity android:name="com.motorola.motocit.connection.ConnectionActivity"/>
+        <!-- Section of GDrvieValidate -->
+        <!-- GPS location -->
+        <activity android:label="@string/tcmd_gdrive"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.gdrive.GDriveValidate" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- BatteryInfo -->
+        <activity android:label="@string/tcmd_battery_batteryInfo"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.battery.BatteryInfo" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Section of GPS -->
+        <!-- GPS location -->
+        <activity android:label="@string/tcmd_gps"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.gps.GPS" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of Vibrator -->
+        <!-- com.motorola.motocit.vibrator Activity
+        This activity is for testing products vibrator with various patterns.
+        Should appear after go into Vibrator menu
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_vibrator"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.vibrator.VibratorTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of WLAN -->
+    <!-- Wifi Mac -->
+         <!-- com.motorola.motocit.wlan.WiFiMac Activity
+        This activity is for getting wifi Mac address.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_wifi_mac"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.wlan.WiFiMac" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- ScanNetwork -->
+        <!-- com.motorola.motocit.wlan.ScanNetwork Activity
+        This activity is for listing all available networks
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_wifi_network"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.wlan.ScanNetwork" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- WlanUtilityNexTest -->
+        <!-- com.motorola.motocit.wlan.WlanUtilityNexTest Activity
+        This activity is for NexTest to retrieve the list of available networks
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_wlan_utility_nextest"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.wlan.WlanUtilityNexTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+        <!-- Section of Sensors -->
+        <!-- Accel -->
+        <!-- com.motorola.motocit.accel.Accel Activity
+        This activity is for testing Accel.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_accel"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.accel.Accel" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Sendondary Accel -->
+        <!-- com.motorola.motocit.accel.AccelSecondary Activity
+        This activity is for testing the 2nd Accel.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_accel_secondary"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.accel.AccelSecondary" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Ambient Temperature -->
+        <!-- com.motorola.motocit.temperature.AmbientTemperature Activity
+        This activity is to test Ambient Temperature.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_ambient_temperature"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.temperature.AmbientTemperature" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Barometer -->
+        <!-- com.motorola.motocit.barometer.Barometer Activity
+        This activity is to test Barometer.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_barometer"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.barometer.Barometer" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Gyroscope -->
+        <!-- com.motorola.motocit.gyroscope.Gyroscope Activity
+        This activity is to test Gyroscope.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_gyro"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.gyroscope.Gyroscope" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Magnetometer -->
+        <!-- com.motorola.motocit.mag.Magnetometer Activity
+        This activity is to test Magnetometer.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_mag"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.mag.Magnetometer" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Proximity -->
+        <!-- com.motorola.motocit.proximity.Proximity Activity
+        This activity is to test Proximity.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_proximity"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.proximity.Proximity" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- 2nd Proximity -->
+        <!-- com.motorola.motocit.proximity.ProximitySecondary Activity
+        This activity is to test Proximity.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_proximity2nd"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.proximity.ProximitySecondary" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_proximity3rd"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.proximity.ProximityThird" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Light Sensor -->
+        <!-- com.motorola.motocit.light.FrontLight Activity
+        This activity is to test light sensor.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_light"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.light.FrontLight" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+	<!-- Heart Rate Sensor -->
+        <!-- com.motorola.motocit.heartratesensor.HeartRateSensor Activity
+        This activity is for testing Heart Rate Sensor.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_heartrate_sensor"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.heartratesensor.HeartRateSensor" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Capsense Sensor -->
+        <!-- com.motorola.motocit.capsense.Capsense Activity
+        This activity is to testing Capsense Sensor.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_cap_touch"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.capsense.Capsense" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <!-- FingerPrint -->
+        <!-- com.motorola.motocit.fingerprint.FingerPrint Activity
+        This activity is for testing FingerPrint.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_fingerprint"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.fingerprint.FingerPrint" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <!-- FingerPrint -->
+        <!-- com.motorola.motocit.fingerprint.FingerPrintTest Activity
+        This activity is for testing FingerPrint.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_fingerprinttest"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.fingerprint.FingerPrintTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Section of Camera -->
+    <!-- Video Capture -->
+        <!-- com.motorola.motocit.camera.VideoCapture Activity
+                This activity is to test camera VideoCapture.
+
+                Options: Orientation fixed to landscape to not deal with rotation
+                -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_videocapture"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.VideoCapture" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Camera Factory Commands -->
+        <!-- com.motorola.motocit.camera.CameraFactory Activity
+        This activity is to control the camera via commands.
+
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_factory"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.CameraFactory" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.Main"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Camera2 Factory Commands -->
+        <!-- com.motorola.motocit.camera.Camera2Factory Activity
+        This activity is to control the camera via commands.
+
+         -->
+        <activity android:allowTaskReparenting="true"
+                  android:label="@string/tcmd_camera2_factory"
+                  android:exported="false"
+                  android:name="com.motorola.motocit.camera.Camera2Factory" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+                  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.Main"/>
+            </intent-filter>
+        </activity>
+    <!-- Start Viewfinder -->
+        <!-- com.motorola.motocit.camera.ExternalViewfinder Activity
+        This activity is to test camera viewfinder.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_viewfinder"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.ExternalViewfinder" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- StrobeTest in Viewfinder -->
+        <!-- com.motorola.motocit.camera.StrobeTest Activity
+        This activity is to start viewfinder then fire strobe.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_strobe"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.StrobeTest" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Torch On in Viewfinder -->
+        <!-- com.motorola.motocit.camera.ViewfinderTorchOn Activity
+        This activity is to test camera viewfinder in Torch On mode.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_viewfindertorchon"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.ViewfinderTorchOn" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Internal Camera Snap All Resolutions -->
+        <!-- com.motorola.motocit.camera.InternalCameraSnapAllResolutions Activity
+        This activity is to capture image in all resolutions.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_internal_camera_snapallresolutions"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:name="com.motorola.motocit.camera.InternalCameraSnapAllResolutions" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_internal_camera_strobe"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:name="com.motorola.motocit.camera.InternalCameraStrobeTest" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+    <!-- External Camera Snap All Resolutions -->
+        <!-- com.motorola.motocit.camera.ExternalCameraSnapAllResolutions Activity
+        This activity is to capture image in all resolutions.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_external_camera_snapallresolutions"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:name="com.motorola.motocit.camera.ExternalCameraSnapAllResolutions" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Start Internal Viewfinder -->
+        <!-- com.motorola.motocit.camera.Internalviewfinder Activity
+        This activity is to start camera internal viewfinder.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_internalviewfinder"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.InternalViewfinder" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- com.motorola.motocit.camera.InternalVideoCapture Activity
+        This activity is to do video capture by front camera.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_internalvideocapture"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.InternalVideoCapture" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Torch On in Internalviewfinder -->
+        <!-- com.motorola.motocit.camera.InternalViewfinderTorchOn Activity
+        This activity is to test camera internal viewfinder in Torch On mode.
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_camera_internalviewfindertorchon"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.camera.InternalViewfinderTorchOn" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of Camera2 API -->
+        <activity
+            android:name=".camera2.FrontViewfinder"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_front_viewfinder"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.FrontViewfinderTorch"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_front_torch"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.FrontViewfinderStrobe"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_front_strobe"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.FrontVideoCapture"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_front_video_capture"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearRgbViewfinder"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_rgb_viewfinder"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearRgbViewfinderTorch"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_rgb_torch"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearRgbViewfinderStrobe"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_rgb_strobe"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearRgbVideoCapture"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_rgb_video_capture"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearMonoViewfinder"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_mono_viewfinder"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearMonoViewfinderStrobe"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_mono_strobe"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".camera2.RearMonoVideoCapture"
+            android:allowTaskReparenting="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/tcmd_camera2_rear_mono_video_capture"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM" />
+                <category android:name="com.motorola.motocit.SequentialMode.Optional" />
+            </intent-filter>
+        </activity>
+
+        <!-- Section of TouchScreen -->
+    <!-- MXT1386 -->
+        <!-- com.motorola.motocit.touchscreen.Touch_MXT1386 Activity
+        This activity is for testing products with the Atmel MXT1386 touchscreen IC.
+        Should appear in menu under Touch Screen -> MXT1386
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_MXT1386"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_MXT1386" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- MXT1386_short -->
+        <!-- com.motorola.motocit.touchscreen.Touch_MXT1386_short Activity
+        This activity is for testing products with the Atmel MXT1386 touchscreen IC.
+        Should appear in menu under Touch Screen -> MXT1386 Short
+
+        Only differs from original 1386 activity by having only 4 vertices instead of 9
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_MXT1386_short"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_MXT1386_Short" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- MXT224 -->
+        <!-- com.motorola.motocit.touchscreen.Touch_MXT224 Activity
+        This activity is for testing products with the Atmel MXT224 or MXT168 touchscreen IC
+        Should appear in menu under Touch Screen -> MXT224 MXT 168
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_MXT224"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_MXT224" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Touch_Diagonal -->
+        <!-- com.motorola.motocit.touchscreen.Touch_Diagonal Activity
+        This activity is for testing products with the Atmel MXT224 or MXT168 touchscreen IC
+        Should appear in menu under Touch Screen -> Touch Diagonal
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_diagonal"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_Diagonal" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Touch Config -->
+        <!-- com.motorola.motocit.touchscreen.Touch_Config Activity
+        This activity is for configurable touch screen testing
+        Should appear in menu under Touch Screen -> Touch Config
+
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_Config"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_Config" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_touchscreen_touch_ft"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.touchscreen.Touch_FT" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- com.motorola.test.touchscreen_Touch_Base Activity
+        This activity is the base class for touchscreen activities...
+         -->
+        <activity android:name="com.motorola.test.touchscreen.Touch_Base"/>
+        <!-- Section of Display -->
+                <!--
+                        Start: start Display_VideoPlayback
+                        ___________________________________________________________________________________
+                -->
+        <activity android:label="@string/tcmd_display_videoplayback"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.Display_VideoPlayback"
+            android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- com.motorola.test.display.Display_RedLineCapture Activity
+                        This Activity displays a black background view with a floating box that
+                        states "Red Line" The purpose of this was to catch a SW bug that caused
+                        The background to display improperly when a floating icon was in front
+
+                        ___________________________________________________________________________________
+                        CommServer
+
+                        Start: start Display_RedLineCapture
+                        ___________________________________________________________________________________
+                        -->
+        <activity android:label="@string/tcmd_display_redlinecapture"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.Display_RedLineCapture"
+            android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of Display Patterns -->
+    <!-- BlackWithWhiteBorder -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_blackWithWhiteBorder"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.BlackWithWhiteBorder" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- BlackWithWhiteBorderReverseOrientation -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_blackWithWhiteBorderReverseOrientation"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.BlackWhiteBorderReverseOrientation" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- WhiteWithBlackBorder -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_whiteWithBlackBorder"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.WhiteWithBlackBorder" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- WhiteWithBlackBorderReverseOrientation -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_whiteWithBlackBorderReverseOrientation"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.WhiteBlackBorderReverseOrientation" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Xtalk -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_xtalk"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Xtalk" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Black -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_black"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.BlackPattern" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- BlackReverseOrientation -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_blackReverseOrientation"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.BlackReverseOrientation" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- GenericColorFullScreenPattern -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_genericColorFullScreenPattern"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.GenericColorFullScreenPattern" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+    <!-- Drawable -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_drawable"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.DrawablePattern" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+    <!-- Grayscale -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_grayscale"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Grayscale" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Bright -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_bright"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Bright" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Bright line pattern -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_bright_line_pattern"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.BrightLine" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Medium -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_medium"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Medium" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Dark -->
+        <activity android:label="@string/tcmd_display_testPatterns_dark"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Dark" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Focus -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_focus"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Focus" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Macbeth -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_macbeth"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Macbeth" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Grayblocks -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_grayblocks"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Grayblocks" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Redblocks -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_redblocks"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Redblocks" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Greenblocks -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_greenblocks"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Greenblocks" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Blueblocks -->
+        <activity
+            android:label="@string/tcmd_display_testPatterns_blueblocks"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.Blueblocks" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- HdmiNineBars -->
+        <activity
+            android:label="@string/tcmd_display_testpattern_hdmininebars"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.HdmiNineBars" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+     <!-- Xtalk Interfering Horizontal-->
+        <activity
+            android:label="@string/tcmd_display_testpattern_xtalkih"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.XtalkInterferingHorizontal" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+     <!-- Xtalk Interfering Vertical-->
+        <activity
+            android:label="@string/tcmd_display_testpattern_xtalkiv"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.XtalkInterferingVertical" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+     <!-- Xtalk Reference -->
+        <activity
+            android:label="@string/tcmd_display_testpattern_xtalkr"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.XtalkR" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+     <!-- Display Image File-->
+        <activity
+            android:label="@string/tcmd_display_testpattern_displayimage"
+            android:exported="false"
+            android:name="com.motorola.motocit.display.testPatterns.DisplayFile" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+            <!-- Section of Version -->
+        <activity android:label="@string/tcmd_version"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.version.Version" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of MMC -->
+        <activity android:label="@string/tcmd_mmc"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.mmc.MMC" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+<!-- Section of SIMCard -->
+        <activity
+            android:label="@string/tcmd_simcard"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.simcard.SIMCard"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+<!-- Section of Audio -->
+    <!-- Audio_Playback -->
+        <activity
+            android:label="@string/tcmd_audio_playback"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioPlayBack"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Audio_PlayMediaFile -->
+        <activity
+            android:label="@string/tcmd_audio_palymediafile"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioPlayMediaFile"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Audio_PlayMediaBackGround -->
+        <activity
+            android:label="@string/tcmd_audio_playmediabackground"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioPlayMediaBackGround"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+    <!-- Audio_Ear -->
+        <activity android:label="@string/tcmd_audio_ear"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioEar" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Audio_Loopback -->
+        <activity android:label="@string/tcmd_audio_loopback"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioLoopBack" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+     <!-- Audio Mic Analyze -->
+        <activity android:label="@string/tcmd_audio_micanalyze"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioMicAnalyze" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+    <!-- Audio_Tone -->
+        <activity android:label="@string/tcmd_audio_tonegenerator"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioToneGen" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Audio_Sample -->
+        <activity android:label="@string/tcmd_audio_sample"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.audio.AudioSample" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of Bluetooth -->
+    <!-- Bluetooth Mac Address -->
+        <activity android:label="@string/tcmd_bt_macaddress"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.bluetooth.BluetoothMac" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Scan BT -->
+        <!-- com.motorola.motocit.wlan.ScanNetwork Activity
+                This activity is for listing all available networks
+                Options: Orientation fixed to portrait to not deal with rotation
+        -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_bt_scan"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.bluetooth.BluetoothScan" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- BluetoothUtilityNexTest -->
+        <!-- com.motorola.motocit.bluetooth.BluetoothUtilityNexTest Activity
+        This activity is for NexTest to retrieve the list of available networks
+        Options: Orientation fixed to portrait to not deal with rotation
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_bluetooth_utility_nextest"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.bluetooth.BluetoothUtilityNexTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+        <!-- Section of Key -->
+    <!-- KeyTest -->
+        <activity android:label="@string/tcmd_key_keytest"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.key.KeyTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of FLIP -->
+        <!-- com.motorola.motocit.flip.FlipTest Activity
+        This activity is for retrieving current flip status.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_flip"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.flip.FlipTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Section of Personalization -->
+        <!-- com.motorola.motocit.personalization.Personalization Activity
+        This activity is for retrieving Personlization info.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_personalization"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.personalization.Personalization" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Section of HdmiInfo -->
+        <!-- com.motorola.motocit.HdmiInfo Activity
+        This activity is for retrieving HDMI Cable status and EDID.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_hdmiinfo"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.hdmi.HdmiInfo" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of NFC -->
+        <!-- com.motorola.motocit.nfc.NFCTest Activity
+        This activity is for retrieving current flip status.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_nfc"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.nfc.NFCTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of LED -->
+        <!-- com.motorola.motocit.led.Led Activity
+             This activity is for retrieving current flip status.
+    -->
+	<activity android:allowTaskReparenting="true"
+	    android:label="@string/tcmd_notification_led"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.led.Led" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+    </activity>
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_meta_key_led"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.led.MetaKeyLed" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+        <!-- Section of Battery -->
+    <!-- Section of Airplanemode -->
+        <activity android:label="@string/tcmd_airplane_mode"
+            android:name="com.motorola.motocit.airplanemode.AirplaneMode" android:screenOrientation="portrait"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Section of InstalledApps -->
+        <activity android:label="@string/tcmd_installed_apps"
+            android:name="com.motorola.motocit.applications.InstalledApps" android:screenOrientation="portrait"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- Headset -->
+        <activity android:label="@string/tcmd_headset_info"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.headset.HeadsetInfo" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.ITEM"/>
+            </intent-filter>
+        </activity>
+    <!-- CosmeticTest -->
+        <activity android:label="@string/tcmd_cosmetic_test"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.cosmetic.CosmeticTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+     <!-- ScreenLockUtil -->
+        <!-- com.motorola.motocit.screenlock.ScreenLockUtil Activity
+        This activity enables and disables the screen lock setting
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_screenlockutil"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.screenlock.ScreenLockUtil" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+     <!-- BlankTest -->
+        <!-- com.motorola.motocit.BlankTest Activity
+        This activity does nothing but display a static screen.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_blank_test"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.BlankTest" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+     <!-- ServiceInfo -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_serviceinfo"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.serviceinfo.ServiceInfo" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+     <!-- SetupWizard -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_setupwizard"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.setupwizard.SetupWizard" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+     <!-- GetSettingsInfo -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_settingsinfo"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.settings.GetSettingsInfo" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+     <!-- Ringtone -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_ringtone"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.ringtone.Ringtone" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+      <!-- Section of SystemTime -->
+        <activity android:label="@string/tcmd_systemtime"
+            android:name="com.motorola.motocit.systemtime.SystemTime" android:screenOrientation="portrait"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Barcode -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_barcode"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.barcode.Barcode" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+         <!-- IR Guesture -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_ir_guesture"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.irsensor.IRGuesture" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+                <category android:name="com.motorola.motocit.SequentialMode.Optional"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Host Mode -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_hostmode"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.hostmode.Hostmode" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <!-- CPU Temperature -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_cpu_temperature"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.temperature.CpuTemperature" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+         <!-- Moto Mods -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/moto_mods"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.mods.MotoMods" android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.motorola.motocit.TestMenuMode.MENU_ITEM"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.motorola.motocit.mods.ProjectorActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/test_projector"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+        <activity
+            android:name="com.motorola.motocit.mods.BatteryActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/test_batterymod"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+        <activity
+            android:name="com.motorola.motocit.mods.CameraActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
+            android:label="@string/test_cameramod"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+        <activity
+            android:name="com.motorola.motocit.mods.HdkTest"
+            android:screenOrientation="portrait"
+            android:label="@string/test_hdk_factory"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+        </activity>
+
+        <activity android:name="Test_Base"
+            android:configChanges="fontScale">
+        </activity>
+        <service android:name="com.motorola.motocit.wlan.WlanScanService"/>
+        <service android:name="com.motorola.motocit.bluetooth.BluetoothScanService"/>
+        <service android:name="com.motorola.motocit.audio.AudioSampleService"/>
+
+        <!-- Section of DATABASE -->
+        <!-- com.motorola.motocit.database.Database Activity
+        This activity is for storing and retrieving database items.
+         -->
+        <activity android:allowTaskReparenting="true"
+            android:label="@string/tcmd_database"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:name="com.motorola.motocit.database.Database" android:screenOrientation="portrait" 
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Add All ALT related activities below this line -->
+        <!-- ALT Main Activity -->
+
+        <activity android:label="@string/tcmd_blank_test"
+            android:name="com.motorola.motocit.AltBlankActivity" android:screenOrientation="portrait"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.AltMainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.FunctionVideoTestActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelAudioVibratorBTWiFiActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelCameraEarpieceProxLightAcceleSDActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelCamera2EarpieceProxLightAcceleSDActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelLCDEarpieceGyroMagFPRActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelLCDEarpieceBarometerGPSSDActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelEarpieceProxLightAcceleVibratorBTWiFiActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ParallelVibratorELPannelActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.ALTBaseActivity"
+            android:launchMode="singleInstance" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.BandTestActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <service android:name="com.motorola.desense.lua.LuaScriptService"
+            android:process=":script" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.AlertDialogActivity" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.RunModemOnlineActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <activity android:name="com.motorola.motocit.alt.altautocycle.RunBatchScriptsActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize" />
+
+        <receiver android:name="com.motorola.motocit.alt.altautocycle.AlarmVibratorELPannelReceiver" />
+
+        <receiver android:name="com.motorola.motocit.alt.altautocycle.AlarmReceiver" android:process=":remote" />
+
+        <receiver android:name="com.motorola.motocit.alt.altautocycle.ALTBaseReceiver" />
+
+        <service android:name="com.motorola.motocit.alt.altautocycle.FunctionTestService" />
+        <service android:name="com.motorola.motocit.alt.altautocycle.ResetAlarmService" />
+        <service android:name="com.motorola.motocit.alt.altautocycle.ParallelAudioBTWiFiService" />
+        <service android:name="com.motorola.motocit.alt.altautocycle.ALTBaseService" />
+        <service android:name="com.motorola.motocit.alt.altautocycle.ParallelVibratorELPannelService" />
+        <service android:name="com.motorola.motocit.alt.altautocycle.ParallelEarpieceProxLightAcceleBTWiFiService" />
+
+    </application>
+</manifest>

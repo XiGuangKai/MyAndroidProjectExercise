@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/irguesture_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/irguesture_1" >
+    </TextView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#ffffffff" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_high_topR_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_high_topR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_high_topR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_high_topR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_high_bottomL_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_high_bottomL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_high_bottomL" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_high_bottomL" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_high_bottomR_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_high_bottomR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_high_bottomR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_high_bottomR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_high_bothBottom_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_high_bothBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_high_bothBottom" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_high_bothBottom" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_low_topR_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_low_topR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_low_topR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_low_topR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_low_bottomL_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_low_bottomL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_low_bottomL" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_low_bottomL" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_low_bottomR_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_low_bottomR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_low_bottomR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_low_bottomR" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_low_bothBottom_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_low_bothBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+         <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_low_bothBottom" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_low_bothBottom" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_ambient_high_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_ambient_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_ambient_high" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_ambient_high" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/ir_ambient_low_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_single_space_text" />
+
+        <TextView
+            android:id="@+id/ir_ambient_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/ir_na_text" />
+
+        <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/max_ir_ambient_low" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+
+            <View android:layout_height="fill_parent" android:layout_width="10dip" android:background="#00000000" />
+
+           <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/min_ir_ambient_low" android:layout_height="wrap_content" android:text="@string/accel_txt_x" android:layout_width="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

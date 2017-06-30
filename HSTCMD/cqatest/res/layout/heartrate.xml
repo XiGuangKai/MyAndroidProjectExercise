@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/heartrate_1" android:text="@string/heartrate_1"></TextView>
+    <View android:layout_width="fill_parent" android:layout_height="1dip" android:background="#ffffffff" />
+    <TextView android:id="@+id/heartrate" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+
+    <TextView android:id="@+id/max_heart_rate" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+
+    <TextView android:id="@+id/min_heart_rate" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+
+</LinearLayout>
+

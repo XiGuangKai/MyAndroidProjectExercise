@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <Button android:text="@string/main_button"
+        android:id="@+id/main_button_start"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button android:text="@string/mini_button"
+        android:id="@+id/main_button_verify"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_button_start"
+        android:layout_weight="1"/>
+
+    <Button android:text="@string/bringup_button"
+        android:id="@+id/bringup_button_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_button_verify"
+        android:layout_weight="1"/>
+
+    <Button android:text="@string/bringup_verify_button"
+        android:id="@+id/bringup_verify_button_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bringup_button_id"
+        android:layout_weight="1"/>
+
+    <Button android:text="@string/online_button"
+        android:id="@+id/main_button_online"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bringup_verify_button_id"
+        android:layout_weight="1"/>
+
+</LinearLayout>

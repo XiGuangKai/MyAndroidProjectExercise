@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:weightSum="1">
+  <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_info"  android:textSize="20sp"></TextView>
+  <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_nouse_1"  android:textSize="20sp" ></TextView>
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent" android:layout_height="wrap_content">>
+    <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_gpslocation"  android:textSize="20sp"></TextView>
+    <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_gpslocation_value"  android:textSize="20sp"  android:textColor="#ffff00"></TextView>
+  </LinearLayout>
+  <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_nouse_2"  android:textSize="20sp"></TextView>
+  <TextView android:layout_height="wrap_content" android:text="@string/mmc_text"  android:layout_width="wrap_content" android:id="@+id/gpstextview_satelliteinfo"  android:textSize="20sp"></TextView>
+  <ListView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/list_gpsinfo"></ListView>
+
+</LinearLayout>

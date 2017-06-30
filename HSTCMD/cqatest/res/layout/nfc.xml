@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+        <TextView
+            android:text="@string/nfc_tag_status"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_tag_status">
+        </TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_detected_tag">
+        </TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_tag_type">
+        </TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_read_write">
+        </TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_max_size">
+        </TextView>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_tnf">
+        </TextView>
+
+        <EditText
+            android:text="@string/nfc_write_data"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/nfc_write_data"
+            android:visibility="invisible">
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/read_write_tag_checkbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_write_tag_checkbox"
+            android:visibility="invisible"
+        />
+
+
+
+</LinearLayout>

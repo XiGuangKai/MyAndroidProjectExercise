@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BroadcastTest</string>
+    <string name="mTextView">BroadcastTest</string>
+    <string name="mSentBroadcastButton">Sent Broadcast</string>
+</resources>

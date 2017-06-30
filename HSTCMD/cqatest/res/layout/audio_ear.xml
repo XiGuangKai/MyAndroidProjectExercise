@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <Button android:text="@string/rst_cycling" android:id="@+id/function_audio_rst_cycling"
+        android:layout_height="wrap_content" android:layout_width="fill_parent"
+        android:layout_centerInParent="true"
+        android:textSize="22dip" android:textStyle="bold" />
+    <Button android:text="@string/earpiece_verify" android:id="@+id/function_audio_earpiece_verification"
+        android:layout_height="wrap_content" android:layout_width="fill_parent"
+        android:layout_centerInParent="true"
+        android:textSize="22dip" android:textStyle="bold"
+        android:layout_below="@+id/function_audio_rst_cycling" />
+
+</RelativeLayout>

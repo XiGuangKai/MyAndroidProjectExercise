@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ImageButton</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_settings2">Settings</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FilePersistenceTest</string>
+    <string name="defaut_show">请输入需要保存的数据</string>
+</resources>

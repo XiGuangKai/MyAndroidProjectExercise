@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+	<com.motorola.tj.alt.altautocycle.util.BorderTextView
+		android:text="@string/functiondisplayborder"
+		android:id="@+id/FunctionDisplayBorder"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_marginTop="5dip"
+		android:textColor="#000000"/>
+</LinearLayout>

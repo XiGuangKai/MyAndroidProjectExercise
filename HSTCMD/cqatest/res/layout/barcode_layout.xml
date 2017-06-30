@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+    android:id="@+id/barcode_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/barcode_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+    <TextView
+    android:id="@+id/model_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/model_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+    <TextView
+    android:id="@+id/imei_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/imei_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+    <TextView
+    android:id="@+id/iccid_sim_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/iccidSim_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+    <TextView
+    android:id="@+id/imei2_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/imei2_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+    <TextView
+    android:id="@+id/iccid_sim2_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#000000"
+    android:textSize="15sp" />
+
+    <ImageView
+    android:id="@+id/iccidSim2_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/desc_code_img" />
+
+</LinearLayout>

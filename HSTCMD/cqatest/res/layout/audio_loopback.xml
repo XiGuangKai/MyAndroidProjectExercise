@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+              android:text="@string/mic_loopback_amplitude_text"
+              android:id="@+id/mic_loopback_amplitude"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    ></TextView>
+
+    <TextView
+              android:text="@string/mic_loopback_freq_text"
+              android:id="@+id/mic_loopback_frequency"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    ></TextView>
+
+    <TextView android:text="@string/mmc_text"
+              android:id="@+id/mic_loopback_prompt"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    ></TextView>
+
+    <Spinner android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/audiosource"
+             android:drawSelectorOnTop="true"
+             android:prompt="@string/audio_source_prompt"
+    ></Spinner>
+
+</LinearLayout>

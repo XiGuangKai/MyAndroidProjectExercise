@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SeeLayoutShow</string>
+    <string name="script_id">script_id</string>
+    <string name="options">options</string>
+    <string name="data_log_options">data_log_options</string>
+    <string name="unit_id">unit_id</string>
+    <string name="zero">0</string>
+    <string name="start">start</string>
+</resources>

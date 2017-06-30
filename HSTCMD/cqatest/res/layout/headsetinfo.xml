@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView android:layout_height="wrap_content" android:text="@string/headset_detect_info_text" android:layout_width="wrap_content" android:id="@+id/headset_detect_info"></TextView>
+    <TextView android:layout_height="wrap_content" android:text="@string/headset_mic_info_text" android:layout_width="wrap_content" android:id="@+id/headset_mic_info"></TextView>
+    <TextView android:layout_height="wrap_content" android:text="@string/headset_type_info_text" android:layout_width="wrap_content" android:id="@+id/headset_type_info"></TextView>
+    <TextView android:layout_height="wrap_content" android:text="@string/headset_address_info_text" android:layout_width="wrap_content" android:id="@+id/headset_address_info"></TextView>
+    <TextView android:layout_height="wrap_content" android:text="@string/headset_key_info_text" android:layout_width="wrap_content" android:id="@+id/headset_key_info"></TextView>
+</LinearLayout>
+

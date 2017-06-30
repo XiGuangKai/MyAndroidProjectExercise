@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/showrecordtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="48dp"
+        android:text="@string/mmc_text"
+        android:textColor="#7FFFD4"
+        android:textSize="50sp"
+        android:textStyle="bold" >
+
+    </TextView>
+
+    <Button
+        android:id="@+id/audioplay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="63dp"
+        android:text="@string/audioplayback_play"
+        android:textSize="18dip"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/audiorecord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/audioplay"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="22dp"
+        android:text="@string/audioplayback_record"
+        android:textSize="18dip"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/speakerOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/audiorecord"
+        android:layout_marginBottom="59dp"
+        android:text="@string/mmc_text" />
+
+    <TextView
+        android:id="@+id/micSelectUiPrompt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/audiorecord"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="21dp"
+        android:text="@string/mmc_text" />
+
+    <Spinner
+        android:id="@+id/spinnerMicSelect"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/speakerOnOff"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<CheckBox
+    android:id="@+id/MsgRed"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/MsgRed"
+    />
+
+<CheckBox
+    android:id="@+id/MsgGreen"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/MsgGreen"
+    />
+
+<CheckBox
+    android:id="@+id/MsgBlue"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/MsgBlue"
+    />
+
+<CheckBox
+    android:id="@+id/MsgWhite"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/MsgWhite"
+    />
+
+<CheckBox
+    android:id="@+id/MsgSmartNotification"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/MsgSmartNotification"
+    />
+    
+ <TextView
+    android:id="@+id/myTextView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/led_note"
+
+    />
+    
+</LinearLayout>
+

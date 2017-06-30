@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--    
+    <ToggleButton android:id="@+id/button_toggle1"
+        android:text="@string/buttons_1_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        -->
+    <TextView android:id="@+id/text_ap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/version_ap"></TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/version_ap"></TextView>
+    <TextView android:id="@+id/text_bp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/version_bp"></TextView>
+    <TextView android:id="@+id/version_bp" android:layout_width="wrap_content" android:layout_height="wrap_content" ></TextView>
+    <TextView android:id="@+id/text_CQATest_package" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/version_CQATest_package"></TextView>
+    <TextView android:id="@+id/version_CQATest_package" android:layout_width="88dp" android:layout_height="wrap_content" ></TextView>
+
+</LinearLayout>
+
